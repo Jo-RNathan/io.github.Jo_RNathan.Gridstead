@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Jo_RNathan.Gridstead</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Gridstead</name>
+  <summary>Infinite procedural wilderness survival, farming, and homestead RPG</summary>
+  <description>
+    <p>
+      Gridstead is an infinite procedural 2D wilderness survival, farming, and homestead RPG.
+      Explore diverse biomes, gather resources, farm crops, craft tools and equipment, and survive
+      hostile creatures and environmental threats.
+    </p>
+    <p>
+      Features include dynamic lighting and day/night cycles, seasonal farming, homestead building,
+      crafting progression, underground exploration, and full gamepad and keyboard/mouse support.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.Jo_RNathan.Gridstead.desktop</launchable>
+  <url type="homepage">https://github.com/Jo-RNathan/Gridstead</url>
+  <url type="bugtracker">https://github.com/Jo-RNathan/Gridstead/issues</url>
+  <developer id="io.github.jo_rnathan">
+    <name>Santhail</name>
+  </developer>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Jo-RNathan/Gridstead/main/art/screenshot1.png</image>
+      <caption>Overworld exploration, farming, and wilderness survival</caption>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Game</category>
+    <category>RolePlaying</category>
+  </categories>
+  <provides>
+    <binary>Gridstead</binary>
+  </provides>
+  <releases>
+    <release version="0.6.0" date="2026-11-24">
+      <description>
+        <p>Initial Linux desktop release with standalone native runtime, custom controls, and dedicated GPU offloading.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>
