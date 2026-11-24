@@ -1,0 +1,52 @@
+app-id: io.github.Jo_RNathan.Gridstead
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk17
+command: Gridstead
+
+finish-args:
+  # Display servers: Wayland & X11 fallback
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  # Hardware GPU acceleration (OpenGL / DRI)
+  - --device=dri
+  # Audio playback (PulseAudio / PipeWire)
+  - --socket=pulseaudio
+  # Network access for LAN/Online multiplayer
+  - --share=network
+  # Game controller / Joystick input
+  - --device=all
+  # Environment paths for OpenJDK
+  - --env=PATH=/app/bin:/app/jre/bin:/usr/bin
+  - --env=JAVA_HOME=/app/jre
+
+modules:
+  - name: openjdk
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk17/install.sh
+    sources: []
+
+  - name: gridstead
+    buildsystem: simple
+    build-commands:
+      # Install launcher and jar
+      - install -Dm755 Gridstead.sh /app/bin/Gridstead
+      - install -Dm644 Gridstead-PC.jar /app/lib/Gridstead-PC.jar
+      # Install desktop entry, metainfo, and icon
+      - install -Dm644 io.github.Jo_RNathan.Gridstead.desktop /app/share/applications/io.github.Jo_RNathan.Gridstead.desktop
+      - install -Dm644 io.github.Jo_RNathan.Gridstead.metainfo.xml /app/share/metainfo/io.github.Jo_RNathan.Gridstead.metainfo.xml
+      - install -Dm644 io.github.Jo_RNathan.Gridstead.png /app/share/icons/hicolor/512x512/apps/io.github.Jo_RNathan.Gridstead.png
+    sources:
+      - type: archive
+        url: https://github.com/Jo-RNathan/Gridstead/releases/download/v0.6.0/Gridstead-v0.6.0.tar.gz
+        sha256: df5f3d69e0e9b799d56500454041a057e71efb618e0f223357bbe7f21b09bcc6
+      - type: file
+        path: io.github.Jo_RNathan.Gridstead.desktop
+      - type: file
+        path: io.github.Jo_RNathan.Gridstead.metainfo.xml
+      - type: file
+        path: io.github.Jo_RNathan.Gridstead.png

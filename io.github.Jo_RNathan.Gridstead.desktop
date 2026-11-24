@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Gridstead
+GenericName=RPG
+Comment=Infinite procedural wilderness survival, farming, and homestead RPG
+Exec=Gridstead
+Icon=io.github.Jo_RNathan.Gridstead
+Terminal=false
+Categories=Game;RolePlaying;
+Keywords=game;rpg;survival;crafting;sandbox;
+StartupNotify=true
+StartupWMClass=Gridstead
+PrefersNonDefaultGPU=true
